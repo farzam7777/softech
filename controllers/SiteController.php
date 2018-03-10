@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,7 +62,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $this->layout = "theme_layout";
+        return $this->render('theme_index');
     }
 
     /**
@@ -124,8 +126,23 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionServices()
+    public function actionSearch()
     {
-        return $this->render('services');
+        $this->layout = "theme_layout";
+        $user = User::findOne(Yii::$app->user->id);
+        $data = array();
+        if (Yii::$app->request->isPost) {
+            $query = $_POST['query'];
+            /*echo shell_exec('C:\Python27\python.exe F:\Softec\test.py');*/
+            $path = Yii::$app->getBasePath() . "/csv/search-results-format.csv";
+            $file = fopen($path, "r");
+            while (!feof($file)) {
+                $data[] = fgetcsv($file);
+            }
+            $file = fopen($path, "r");
+            fclose($file);
+            unset($data[0]);
+        }
+        return $this->render('search_results', ['data' => $data, 'user' => $user]);
     }
 }
