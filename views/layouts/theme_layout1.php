@@ -76,11 +76,14 @@ use yii\helpers\Url;
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <?php
-                ?>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                if (Yii::$app->controller->id == "site" && Yii::$app->controller->action->id == "index") {
+                    ?>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <?php
+                } ?>
                 <?php
                 if (Yii::$app->controller->action->id != "search") {
                     ?>

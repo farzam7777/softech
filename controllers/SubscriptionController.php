@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\components\EmailHelper;
 use app\components\QueryHelper;
 use app\models\Discussions;
+use app\models\User;
 use app\models\UserSubscriptions;
 use Yii;
 use yii\filters\VerbFilter;
@@ -31,6 +32,21 @@ class SubscriptionController extends Controller
         ];
     }
 
+    /**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionIndex()
+    {
+        $this->layout = "theme_layout";
+        $this->layout = "theme_layout";
+        $user = User::findOne(Yii::$app->user->id);
+        $data = $user->subscriptions;
+        return $this->render('/user/subscriptions', ['data' => $data, 'user' => $user]);
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
     public function actionCreate()
     {
         $this->layout = "theme_layout";
@@ -45,6 +61,16 @@ class SubscriptionController extends Controller
                 return $this->redirect(['site/search', 'query' => $query, 'type' => $type]);
             }
         }
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionDelete($id)
+    {
+        $model = $this->findModel($id);
+        $model->delete();
+        $user = User::findOne(Yii::$app->user->id);
+        $data = $user->subscriptions;
+        return $this->render('/user/subscriptions', ['data' => $data, 'user' => $user]);
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
