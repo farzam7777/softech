@@ -44,35 +44,35 @@ use yii\helpers\Url;
 <section class="about" id="about">
     <div class="container text-center">
         <h2>
-            About Bell Theme
+            About My Favorite Application
         </h2>
 
         <p>
-            Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, per nihil dicant commodo an. Eum tacimates erroribus ad. Atqui feugiat euripidis ea pri, sed veniam tacimates ex. Menandri temporibus an duo.
+            Our application allows users to manage events and set alerts on them. Registered users are facilitated with subscription and alerts on events.
         </p>
 
         <div class="row stats-row">
             <div class="stats-col text-center col-md-3 col-sm-6">
                 <div class="circle">
-                    <span class="stats-no" data-toggle="counter-up">232</span> Satisfied Customers
+                    <span class="stats-no" data-toggle="counter-up">232</span> Dynamic Events
                 </div>
             </div>
 
             <div class="stats-col text-center col-md-3 col-sm-6">
                 <div class="circle">
-                    <span class="stats-no" data-toggle="counter-up">79</span> Released Projects
+                    <span class="stats-no" data-toggle="counter-up">79</span> Our Leagues
                 </div>
             </div>
 
             <div class="stats-col text-center col-md-3 col-sm-6">
                 <div class="circle">
-                    <span class="stats-no" data-toggle="counter-up">1,463</span> Hours Of Support
+                    <span class="stats-no" data-toggle="counter-up">1,463</span> Our Matches
                 </div>
             </div>
 
             <div class="stats-col text-center col-md-3 col-sm-6">
                 <div class="circle">
-                    <span class="stats-no" data-toggle="counter-up">15</span> Hard Workers
+                    <span class="stats-no" data-toggle="counter-up">15</span> Our Players
                 </div>
             </div>
         </div>
@@ -81,16 +81,6 @@ use yii\helpers\Url;
 <!-- /About -->
 <!-- Parallax -->
 
-<div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
-    <h2>
-        Welcome to a perfect theme
-    </h2>
-
-    <p>
-        This is the most powerful theme with thousands of options that you have never seen before.
-    </p>
-    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="<?= Yii::$app->homeUrl?>/assets_theme/img/gadgets.png">
-</div>
 <!-- /Parallax -->
 <!-- Features -->
 
@@ -111,11 +101,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Custom Design
+                            Dynamic Events
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            We provide dynamically provisioned events at run time. 
                         </p>
                     </div>
                 </div>
@@ -131,11 +121,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Responsive Layout
+                            Players
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            Different players around the globe are managed via proper alerts.
                         </p>
                     </div>
                 </div>
@@ -151,11 +141,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Innovative Ideas
+                            Leagues
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            Different Leagues around the globe are managed via events.
                         </p>
                     </div>
                 </div>
@@ -173,11 +163,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Good Documentation
+                            Effective Storage
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            We use effecient and effective algorithms to maintain our users events to ensure great user experience. 
                         </p>
                     </div>
                 </div>
@@ -193,11 +183,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Excellent Features
+                            Matches
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            Users are facilitated to set alerts on their favorite upcoming matches. 
                         </p>
                     </div>
                 </div>
@@ -213,11 +203,11 @@ use yii\helpers\Url;
 
                     <div>
                         <h3>
-                            Retina Ready
+                            Subscription
                         </h3>
 
                         <p>
-                            Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
+                            Users can subscribe themselves to certain events to get daily alerts regarding events.
                         </p>
                     </div>
                 </div>
@@ -228,182 +218,6 @@ use yii\helpers\Url;
 <!-- /Features -->
 <!-- Call to Action -->
 
-<section class="cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 col-sm-12 text-lg-left text-center">
-                <h2>
-                    Call to Action Section
-                </h2>
-
-                <p>
-                    Lorem ipsum dolor sit amet, nec ad nisl mandamus imperdiet, ut corpora cotidieque cum. Et brute iracundia his, est eu idque dictas gubergren
-                </p>
-            </div>
-
-            <div class="col-lg-3 col-sm-12 text-lg-right text-center">
-                <a class="btn btn-ghost" href="#">Buy This Theme</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Call to Action -->
-<!-- Portfolio -->
-
-<section class="portfolio" id="portfolio">
-    <div class="container text-center">
-        <h2>
-            Portfolio
-        </h2>
-
-        <p>
-            Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, Per nihil dicant commodo an.
-        </p>
-    </div>
-
-    <div class="portfolio-grid">
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-1.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-2.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-3.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-4.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-5.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-6.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-7.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <a href="#"><img alt="" src="<?= Yii::$app->homeUrl?>/assets_theme/img/porf-8.jpg">
-                        <div class="portfolio-over">
-                            <div>
-                                <h3 class="card-title">
-                                    The Dude Rockin'
-                                </h3>
-
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                                </p>
-                            </div>
-                        </div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Portfolio -->
 <!-- Team -->
 
 <section class="team" id="team">
