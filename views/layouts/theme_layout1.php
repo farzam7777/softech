@@ -86,10 +86,11 @@ use yii\helpers\Url;
                     ?>
                     <li><a href="#">Subscriptions</a></li>
                     <?php if (Yii::$app->user->isGuest) { ?>
-                        <li><a href="<?= Url::to(['/user/login'])?>">Login</a></li>
-                        <li><a href="<?= Url::to(['/user/register'])?>">Sign Up</a></li>
+                        <li><a href="<?= Url::to(['/user/login']) ?>">Login</a></li>
+                        <li><a href="<?= Url::to(['/user/register']) ?>">Sign Up</a></li>
                     <?php } else { ?>
-                        <li><a href="<?= Url::to(['/site/logout'])?>">Logout (<?= Yii::$app->user->identity->username ?>)</a></li>
+                        <li><a href="<?= Url::to(['/site/logout']) ?>">Logout
+                                (<?= Yii::$app->user->identity->username ?>)</a></li>
                     <?php } ?>
                     <?php
                 } ?>
@@ -103,7 +104,16 @@ use yii\helpers\Url;
     </div>
 </header><!-- #header -->
 
-<?= $content ?>
+<center>
+    <br/>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <?= $content ?>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</center>
 
 <footer class="site-footer">
     <div class="bottom">

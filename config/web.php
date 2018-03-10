@@ -18,6 +18,10 @@ $config = [
             'confirmWithin' => 21600,
             'cost' => 12,
             'admins' => ['admin'],
+            /*'controllerMap' => [
+                'Registration' => 'app\controllers\RegistrationController',
+                'Security' => 'app\controllers\SecurityController'
+            ],*/
             'modelMap' => [
                 'User' => 'app\models\User',
             ],
