@@ -133,7 +133,7 @@ class SiteController extends Controller
         $user = User::findOne(Yii::$app->user->id);
         $data = array();
         if(!empty($query) && !empty($type)){
-            echo shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
+            $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
             $path = Yii::$app->getBasePath() . "/Search.csv";
             $file = fopen($path, "r");
             while (!feof($file)) {
