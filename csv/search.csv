@@ -1,6 +1,4 @@
-ID,Name,Link
-1,cricket,http://espncricinfo.com
-2,MCC spirit of cricket test series,http://www.espn.in/cricket/series/_/id/8640/mcc-spirit-cricket-test-series
-3,Southern cross trophy,http://www.espn.in/cricket/series/_/id/8527/southern-cross-trophy
-4,Southern cross trophy 1999/00,http://www.espn.in/cricket/series/_/id/18255/southern-cross-trophy-1999-00
-5,Asian cricket council Premier league,http://www.espn.in/cricket/series/_/id/8672/asian-cricket-council-premier-league
+Name,Link,Image Link,Label
+Big Bash (State Competition),http://www.espncricinfo.com/series/_/id/8627/big-bash-state-competition,http://a.espncdn.com/combiner/i?img=%2fredesign%2fassets%2fimg%2ficons%2fespn-icon-cricket.png&w=90,League
+Twenty20 Big Bash,http://www.espncricinfo.com/series/_/id/8044/twenty20-big-bash,http://i.imgci.com/espncricinfo/espncricinfologo.png,League
+Womens Big Bash League,http://www.espncricinfo.com/series/_/id/18042/womens-big-bash-league,http://a.espncdn.com/combiner/i?img=%2fredesign%2fassets%2fimg%2ficons%2fespn-icon-cricket.png&w=90,League

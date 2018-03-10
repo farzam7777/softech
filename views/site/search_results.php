@@ -200,14 +200,35 @@
                                         if (!Yii::$app->user->isGuest) {
                                             $is_subscribed = \app\models\UserSubscriptions::findOne([
                                                 'user_id' => $user->id,
-                                                'link' => $value[2],
+                                                'link' => $value[1],
                                             ]);
                                         }
                                         ?>
-                                        <tr data-status="pagado">
+                                        <tr>
+                                            <td>
+                                                <button type="button" class="btn-warning pull-right"
+                                                        data-toggle="modal"
+                                                        data-target="#myModal1">
+                                                    <i class="fa fa-image"></i>
+                                                </button>
+                                                <!-- Modal -->
+                                                <div id="myModal1" class="modal fade" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <center>
+                                                                    <img src="<?= $value['2'] ?>">
+                                                                </center>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td style="width: 100%">
                                                 <h4 class="title">
-                                                    <a href="#" onclick="return false;"><?= $value[1] ?></a>
+                                                    <a href="#" onclick="return false;"><?= $value[0] ?></a>
                                                 </h4>
                                             </td>
                                             <td>
@@ -239,9 +260,12 @@
                                                                           method="post">
                                                                         <div class="modal-body">
                                                                             <div class="form-group">
-                                                                                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                                                                                <input type="hidden" name="link" value="<?= $value[2] ?>">
-                                                                                <input type="hidden" name="query" value="<?= $_GET['query'] ?>">
+                                                                                <input type="hidden" name="_csrf"
+                                                                                       value="<?= Yii::$app->request->getCsrfToken() ?>"/>
+                                                                                <input type="hidden" name="link"
+                                                                                       value="<?= $value[1] ?>">
+                                                                                <input type="hidden" name="query"
+                                                                                       value="<?= $_GET['query'] ?>">
                                                                                 <label for="alert_time">
                                                                                     Select Time
                                                                                 </label>
