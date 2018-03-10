@@ -39,8 +39,7 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'Services', 'url' => ['/site/services']],
-            ['label' => 'Posts', 'url' => ['/posts/index']]
+            ['label' => 'Search', 'url' => ['/site/search']],
           ];
           if (Yii::$app->user->isGuest) {
             array_push($navItems,['label' => 'Sign In', 'url' => ['/user/login']],['label' => 'Sign Up', 'url' => ['/user/register']]);

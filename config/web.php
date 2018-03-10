@@ -40,9 +40,17 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'localhost',
-                'port' => '1025',
-                // 'encryption' => 'tls',
+                'host' => 'smtp.gmail.com',
+                'username' => 'saladinian@gmail.com',
+                'password' => 'lkkv kcoz bjzb mtvw',
+                'port' => '587',
+                'encryption' => 'tls',
+                'streamOptions' => [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                ],
             ],
         ],
         'log' => [
@@ -58,7 +66,7 @@ $config = [
         
         'urlManager' => [
             'enablePrettyUrl' => true,
-            // 'showScriptName' => false,
+            'showScriptName' => false,
             // 'rules' => [
             // ],
         ],
