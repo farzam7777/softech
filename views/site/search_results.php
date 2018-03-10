@@ -64,7 +64,7 @@
                                                 <div class="">
                                                     <div class="">
                                                         <?php
-                                                        if (empty($is_subscribed) && empty(Yii::$app->user->isGuest)) {
+                                                        if (empty($is_subscribed) && !Yii::$app->user->isGuest) {
                                                         ?>
                                                         <button type="button" class="btn-success pull-right"
                                                                 data-toggle="modal"
