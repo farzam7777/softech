@@ -1,6 +1,6 @@
 <?php
 	
-	$this->registerJsFile("/basic/web/js/main.js", ['depends' => 'yii\web\JqueryAsset']);
+	$this->registerJsFile("/basic/js/main.js", ['depends' => 'yii\web\JqueryAsset']);
 
 	use yii\helpers\Html;
 	use yii\widgets\LinkPager;
