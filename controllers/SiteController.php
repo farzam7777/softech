@@ -74,6 +74,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = "theme_layout";
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -124,6 +125,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $this->layout = "theme_layout";
         return $this->render('about');
     }
 
@@ -134,14 +136,15 @@ class SiteController extends Controller
         $data = array();
         if(!empty($query) && !empty($type)){
             $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
-            $path = Yii::$app->getBasePath() . "/Search.csv";
-            $file = fopen($path, "r");
-            while (!feof($file)) {
-                $data[] = fgetcsv($file);
+            if($result == "No Record Found"){
+                $path = Yii::$app->getBasePath() . "/Search.csv";
+                $file = fopen($path, "r");
+                while (!feof($file)) {
+                    $data[] = fgetcsv($file);
+                }
+                fclose($file);
+                unset($data[0]);
             }
-            $file = fopen($path, "r");
-            fclose($file);
-            unset($data[0]);
             return $this->render('search_results', ['data' => $data, 'user' => $user]);
         }
         throw new NotFoundHttpException('The requested page does not exist.');

@@ -40,12 +40,12 @@ class SubscriptionController extends Controller
             $type = $_POST['type'];
             $model->link = $_POST['link'];
             $model->user_id = Yii::$app->user->id;
-            $model->alert_time = date('H:i:s');
+            $model->alert_time = $_POST['alert_time'];
             if ($model->save()) {
                 return $this->redirect(['site/search', 'query' => $query, 'type' => $type]);
             }
         }
-
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     protected function findModel($id)
