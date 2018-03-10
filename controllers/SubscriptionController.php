@@ -39,7 +39,7 @@ class SubscriptionController extends Controller
             $query = $_POST['query'];
             $type = $_POST['type'];
             $model->link = $_POST['link'];
-            $model->user_id = Yii::$app->user->id;
+            $model->user_id = Yii::$app->user->identity->id;
             $model->alert_time = $_POST['alert_time'];
             if ($model->save()) {
                 return $this->redirect(['site/search', 'query' => $query, 'type' => $type]);
