@@ -1,4 +1,4 @@
-<?=  $this->registerCss(Yii::$app->request->baseUrl . "/css/sticky_footer.css");?>
+<?= $this->registerCss(Yii::$app->request->baseUrl . "/css/sticky_footer.css"); ?>
 
 <div class="container">
     <div class="row">
@@ -141,6 +141,10 @@
                                         <?php
                                     }
                                 }
+                            } else {
+                                ?>
+                                <p>No Records Found</p>
+                                <?php
                             }
                             ?>
                             </tbody>
