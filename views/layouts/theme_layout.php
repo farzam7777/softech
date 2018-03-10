@@ -46,6 +46,7 @@ use yii\helpers\Url;
 
     <!-- Main Stylesheet File -->
     <link href="<?= Yii::$app->request->baseUrl ?>/assets_theme/css/style.css" rel="stylesheet">
+    <link href="<?= Yii::$app->request->baseUrl ?>/css/sticky_footer.css" rel="stylesheet">
 
     <!-- =======================================================
       Theme Name: Bell
@@ -74,10 +75,21 @@ use yii\helpers\Url;
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <?php
+                if (Yii::$app->controller->action->id != "search") {
+                    ?>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <?php
+                } else {
+                    ?>
+                    <li><a href="#about">Subscriptions</a></li>
+                    <li><a href="#about">Login</a></li>
+                    <li><a href="#features">Sign Up</a></li>
+                    <?php
+                }?>
             </ul>
         </nav><!-- #nav-menu-container -->
 
@@ -102,27 +114,6 @@ use yii\helpers\Url;
                     <div class="credits">
                     </div>
                 </div>
-
-                <div class="col-lg-6 col-xs-12 text-lg-right text-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="<?= Url::to(['/']) ?>">Home</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a href="#features">Features</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a href="#quran">Qur'an</a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>
