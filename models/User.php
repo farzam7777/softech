@@ -5,9 +5,12 @@
 
     class User extends BaseUser
     {
-        public function getPosts()
+        /**
+         * @return \yii\db\ActiveQuery
+         */
+        public function getSubscriptions()
         {
-            return $this->hasMany(Posts::className(), ['user_id' => 'id']);
+            return $this->hasMany(UserSubscriptions::className(), ['user_id' => 'id']);
         }
     }
 
