@@ -6,6 +6,7 @@ use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -131,8 +132,8 @@ class SiteController extends Controller
         $this->layout = "theme_layout";
         $user = User::findOne(Yii::$app->user->id);
         $data = array();
-        if (Yii::$app->request->isPost) {
-            $query = $_POST['query'];
+        if(!empty($_GET['query'])){
+            $query = $_GET['query'];
             /*echo shell_exec('C:\Python27\python.exe F:\Softec\test.py');*/
             $path = Yii::$app->getBasePath() . "/csv/search-results-format.csv";
             $file = fopen($path, "r");
@@ -142,7 +143,8 @@ class SiteController extends Controller
             $file = fopen($path, "r");
             fclose($file);
             unset($data[0]);
+            return $this->render('search_results', ['data' => $data, 'user' => $user]);
         }
-        return $this->render('search_results', ['data' => $data, 'user' => $user]);
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

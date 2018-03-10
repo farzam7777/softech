@@ -197,7 +197,7 @@
                                 foreach ($data as $value) {
                                     //dd($value);
                                     if (!empty($value)) {
-                                        if(!Yii::$app->user->isGuest){
+                                        if (!Yii::$app->user->isGuest) {
                                             $is_subscribed = \app\models\UserSubscriptions::findOne([
                                                 'user_id' => $user->id,
                                                 'link' => $value[2],
@@ -205,39 +205,78 @@
                                         }
                                         ?>
                                         <tr data-status="pagado">
-                                            <td>
-                                                <div class="ckbox">
-                                                    <input type="checkbox" id="checkbox1">
-                                                    <label for="checkbox1"></label>
-                                                </div>
+                                            <td style="width: 100%">
+                                                <h4 class="title">
+                                                    <a href="#" onclick="return false;"><?= $value[1] ?></a>
+                                                </h4>
                                             </td>
                                             <td>
-
-                                            </td>
-                                            <td>
-                                                <div class="media">
+                                                <div class="">
                                                     <div class="">
                                                         <?php
                                                         if (empty($is_subscribed)) {
-                                                            ?>
-                                                            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal">
-                                                                <i class=""></i>
-                                                            </button>
-                                                            <?php
+                                                        ?>
+                                                        <button type="button" class="btn-success pull-right"
+                                                                data-toggle="modal"
+                                                                data-target="#myModal">
+                                                            <i class="fa fa-star"></i>
+                                                        </button>
+                                                    <!-- Modal -->
+                                                        <div id="myModal" class="modal fade" role="dialog">
+                                                            <div class="modal-dialog">
+
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close"
+                                                                                data-dismiss="modal">&times;
+                                                                        </button>
+                                                                        <h4 class="modal-title">
+                                                                            Subscribe / BookMark
+                                                                        </h4>
+                                                                    </div>
+                                                                    <form action="<?= \yii\helpers\Url::to(['subscribe/change']) ?>"
+                                                                          method="post">
+                                                                        <div class="modal-body">
+                                                                            <div class="form-group">
+                                                                                <input type="hidden" name="link" value="<?= $value[2] ?>">
+                                                                                <label for="alert_time">
+                                                                                    Select Time
+                                                                                </label>
+                                                                                <select class="form-control"
+                                                                                        name="alert_time" required>
+                                                                                    <option value="1">1 Hours</option>
+                                                                                    <option value="2">2 Hours</option>
+                                                                                    <option value="3">3 Hours</option>
+                                                                                    <option value="4">4 Hours</option>
+                                                                                    <option value="5">5 Hours</option>
+                                                                                    <option value="10">10 Hours</option>
+                                                                                    <option value="15">15 Hours</option>
+                                                                                    <option value="20">20 Hours</option>
+                                                                                    <option value="24">1 Day</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn">Submit
+                                                                            </button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <?php
                                                         }/* else {
-                                                            */?><!--
+                                                            */ ?><!--
                                                             <a class="btn btn-success media-meta pull-right"
                                                                style="color: #fff"
-                                                               href="<?/*= \yii\helpers\Url::to(['subscriptions/change']) */?>">
+                                                               href="<?/*= \yii\helpers\Url::to(['subscriptions/change']) */ ?>">
                                                                 Unsubscribe
                                                             </a>
                                                             --><?php
-/*                                                        }*/
+                                                        /*                                                        }*/
                                                         ?>
-
-                                                        <h4 class="title">
-                                                            <a href="#" onclick="return false;"><?= $value[1] ?></a>
-                                                        </h4>
                                                     </div>
                                                 </div>
                                             </td>

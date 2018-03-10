@@ -42,6 +42,8 @@ class UserSubscriptions extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'link' => 'Link',
+            'match_time' => 'Match Time',
+            'alert_time' => 'Alert Time',
         ];
     }
 
