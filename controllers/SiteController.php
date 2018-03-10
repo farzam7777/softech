@@ -136,9 +136,7 @@ class SiteController extends Controller
         $data = array();
         if(!empty($query) && !empty($type)){
             $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
-            print_r($result);
-            die;
-            if($result == "No Record Found"){
+            if($result != "No Record Found"){
                 $path = Yii::$app->getBasePath() . "/Search.csv";
                 $file = fopen($path, "r");
                 while (!feof($file)) {
