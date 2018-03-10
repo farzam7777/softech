@@ -266,6 +266,8 @@
                                                                                        value="<?= $value[1] ?>">
                                                                                 <input type="hidden" name="query"
                                                                                        value="<?= $_GET['query'] ?>">
+                                                                                <input type="hidden" name="type"
+                                                                                       value="<?= $_GET['type'] ?>">
                                                                                 <label for="alert_time">
                                                                                     Select Time
                                                                                 </label>

@@ -36,12 +36,13 @@ class SubscriptionController extends Controller
         $this->layout = "theme_layout";
         $model = new UserSubscriptions();
         if (Yii::$app->request->post()) {
-            $query = $_POST['link'];
+            $query = $_POST['query'];
+            $type = $_POST['type'];
             $model->link = $_POST['link'];
             $model->user_id = Yii::$app->user->id;
             $model->alert_time = date('H:i:s');
             if ($model->save()) {
-                return $this->redirect(['site/search', 'query' => $query]);
+                return $this->redirect(['site/search', 'query' => $query, 'type' => $type]);
             }
         }
 
