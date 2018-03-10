@@ -127,15 +127,14 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionSearch()
+    public function actionSearch($query = null, $type = null)
     {
         $this->layout = "theme_layout";
         $user = User::findOne(Yii::$app->user->id);
         $data = array();
-        if(!empty($_GET['query'])){
-            $query = $_GET['query'];
+        if(!empty($query) && !empty($type)){
             /*echo shell_exec('C:\Python27\python.exe F:\Softec\test.py');*/
-            $path = Yii::$app->getBasePath() . "/csv/search-results-format.csv";
+            $path = Yii::$app->getBasePath() . "/csv/search.csv";
             $file = fopen($path, "r");
             while (!feof($file)) {
                 $data[] = fgetcsv($file);

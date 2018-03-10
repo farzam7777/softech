@@ -10,6 +10,8 @@ use Yii;
  * @property int $id
  * @property int $user_id
  * @property string $link
+ * @property string $match_time
+ * @property string $alert_time
  */
 class UserSubscriptions extends \yii\db\ActiveRecord
 {
@@ -29,7 +31,7 @@ class UserSubscriptions extends \yii\db\ActiveRecord
         return [
             [['user_id', 'link'], 'required'],
             [['user_id'], 'integer'],
-            [['link'], 'string'],
+            [['link', 'match_time', 'alert_time'], 'string'],
         ];
     }
 

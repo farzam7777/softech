@@ -235,11 +235,13 @@
                                                                             Subscribe / BookMark
                                                                         </h4>
                                                                     </div>
-                                                                    <form action="<?= \yii\helpers\Url::to(['subscribe/change']) ?>"
+                                                                    <form action="<?= \yii\helpers\Url::to(['subscription/create']) ?>"
                                                                           method="post">
                                                                         <div class="modal-body">
                                                                             <div class="form-group">
+                                                                                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                                                                                 <input type="hidden" name="link" value="<?= $value[2] ?>">
+                                                                                <input type="hidden" name="query" value="<?= $_GET['query'] ?>">
                                                                                 <label for="alert_time">
                                                                                     Select Time
                                                                                 </label>

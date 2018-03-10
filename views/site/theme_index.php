@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+
 ?>
 <!-- Page Content
     ================================================== -->
@@ -18,15 +19,21 @@ use yii\helpers\Url;
                 Welcome to My Favourites Application
             </h1>
 
-            <form action="<?= Url::to(['site/search'])?>" method="post">
+            <form action="<?= Url::to(['site/search']) ?>" method="get">
                 <center>
                     <div id="custom-search-input">
-                        <div class="input-group col-md-6">
-                            <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                            <input type="text" style="border-top-right-radius: 4px;border-bottom-right-radius: 4px;"
-                                   class="form-control input-lg" placeholder="Search for Players, Teams or Leagues"
+                        <div class="col-md-5">
+                            <select class="form-control" name="type" required>
+                                <option value="Football">Football</option>
+                                <option value="Cricket">Cricket</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <div class="col-md-5">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Search for Players, Teams or Leagues"
                                    name="query" required/>
-                            <span class="input-group-btn"></span>
                         </div>
                     </div>
                 </center>
@@ -48,7 +55,8 @@ use yii\helpers\Url;
         </h2>
 
         <p>
-            Our application allows users to manage events and set alerts on them. Registered users are facilitated with subscription and alerts on events.
+            Our application allows users to manage events and set alerts on them. Registered users are facilitated with
+            subscription and alerts on events.
         </p>
 
         <div class="row stats-row">
@@ -105,7 +113,7 @@ use yii\helpers\Url;
                         </h3>
 
                         <p>
-                            We provide dynamically provisioned events at run time. 
+                            We provide dynamically provisioned events at run time.
                         </p>
                     </div>
                 </div>
@@ -167,7 +175,8 @@ use yii\helpers\Url;
                         </h3>
 
                         <p>
-                            We use effecient and effective algorithms to maintain our users events to ensure great user experience. 
+                            We use effecient and effective algorithms to maintain our users events to ensure great user
+                            experience.
                         </p>
                     </div>
                 </div>
@@ -187,7 +196,7 @@ use yii\helpers\Url;
                         </h3>
 
                         <p>
-                            Users are facilitated to set alerts on their favorite upcoming matches. 
+                            Users are facilitated to set alerts on their favorite upcoming matches.
                         </p>
                     </div>
                 </div>
@@ -229,7 +238,8 @@ use yii\helpers\Url;
         <div class="row">
             <div class="col-sm-4 col-xs-12">
                 <div class="card card-block">
-                    <a href="#"><img alt="" class="team-img" height="360px" src="<?= Yii::$app->homeUrl?>/assets_theme/img/team-1.jpg">
+                    <a href="#"><img alt="" class="team-img" height="360px"
+                                     src="<?= Yii::$app->homeUrl ?>/assets_theme/img/team-1.jpg">
                         <div class="card-title-wrap">
                             <span class="card-title">Hamza Awan</span> <span class="card-text">Web Developer</span>
                         </div>
@@ -240,19 +250,23 @@ use yii\helpers\Url;
                             </h4>
 
                             <nav class="social-nav">
-                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i
+                                            class="fa fa-envelope"></i></a>
                             </nav>
 
                             <p>
                                 Perfectionist
                             </p>
-                        </div></a>
+                        </div>
+                    </a>
                 </div>
             </div>
 
             <div class="col-sm-4 col-xs-12">
                 <div class="card card-block">
-                    <a href="#"><img alt="" class="team-img" height="360px" src="<?= Yii::$app->homeUrl?>/assets_theme/img/team-2.jpg">
+                    <a href="#"><img alt="" class="team-img" height="360px"
+                                     src="<?= Yii::$app->homeUrl ?>/assets_theme/img/team-2.jpg">
                         <div class="card-title-wrap">
                             <span class="card-title">Farzam Azhar</span> <span class="card-text">Web Developer</span>
                         </div>
@@ -263,19 +277,23 @@ use yii\helpers\Url;
                             </h4>
 
                             <nav class="social-nav">
-                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i
+                                            class="fa fa-envelope"></i></a>
                             </nav>
 
                             <p>
                                 Perfectionist
                             </p>
-                        </div></a>
+                        </div>
+                    </a>
                 </div>
             </div>
 
             <div class="col-sm-4 col-xs-12">
                 <div class="card card-block">
-                    <a href="#"><img alt="" class="team-img" height="360px" src="<?= Yii::$app->homeUrl?>/assets_theme/img/team-3.jpg">
+                    <a href="#"><img alt="" class="team-img" height="360px"
+                                     src="<?= Yii::$app->homeUrl ?>/assets_theme/img/team-3.jpg">
                         <div class="card-title-wrap">
                             <span class="card-title">Faisal Ali</span> <span class="card-text">Web Developer</span>
                         </div>
@@ -286,13 +304,16 @@ use yii\helpers\Url;
                             </h4>
 
                             <nav class="social-nav">
-                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i
+                                            class="fa fa-envelope"></i></a>
                             </nav>
 
                             <p>
                                 Perfectionist
                             </p>
-                        </div></a>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -336,22 +357,28 @@ use yii\helpers\Url;
                     <div id="errormessage"></div>
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                   data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                   data-rule="email" data-msg="Please enter a valid email"/>
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                   data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject"/>
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <textarea class="form-control" name="message" rows="5" data-rule="required"
+                                      data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validation"></div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
                     </form>
                 </div>
             </div>

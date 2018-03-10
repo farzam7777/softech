@@ -33,22 +33,15 @@ class SubscriptionController extends Controller
 
     public function actionCreate()
     {
+        $this->layout = "theme_layout";
         $model = new UserSubscriptions();
         if (Yii::$app->request->post()) {
+            $query = $_POST['link'];
             $model->link = $_POST['link'];
             $model->user_id = Yii::$app->user->id;
             $model->alert_time = date('H:i:s');
             if ($model->save()) {
-                $perms = QueryHelper::getAllowedUsers($model->project->category_id);
-                foreach ($perms as $perm) {
-                    $sub = $model->user->name . ' has posted a discussion message for the project ' . $model->project->title;
-                    $html = "<p>'<i>{$model->text}</i>' by <b><i>{$model->user->name}</i></b> on <b>" . date('d/m/y', strtotime($model->date)) . "</b></p>
-                            <br/><br/>
-                             <a href='" . Url::to(['category/view', 'id' => base64_encode($model->project->category_id)]) . "'>
-                                (Click here to access the project(s) in the {$model->project->category->name} category)
-                             </a>";
-                    EmailHelper::Send($perm->user->email, Yii::$app->params['adminEmail'], $sub, $html);
-                }
+                return $this->redirect(['site/search', 'query' => $query]);
             }
         }
 
