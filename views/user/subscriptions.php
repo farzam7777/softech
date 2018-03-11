@@ -67,7 +67,7 @@
                                                         if (!empty($is_subscribed) && !Yii::$app->user->isGuest/*&& $_GET['type'] == "Cricket"*/) {
                                                             ?>
                                                             <a href="<?= \yii\helpers\Url::to(['subscription/delete', 'id' => $is_subscribed->id]) ?>"
-                                                               class="btn-danger pull-right">
+                                                               class="btn btn-danger pull-right">
                                                                 <i class="fa fa-star"></i>
                                                             </a>
                                                             <?php

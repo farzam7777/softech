@@ -73,12 +73,7 @@ class SubscriptionController extends Controller
     {
         $model = $this->findModel($id);
         $model->delete();
-        $user = User::findOne(Yii::$app->user->id);
-        $data[] = array();
-        if(!empty($user->subscriptions)){
-            $data = $user->subscriptions;
-        }
-        return $this->render('/user/subscriptions', ['data' => $data, 'user' => $user]);
+        return $this->redirect(['index']);
     }
 
     protected function findModel($id)
