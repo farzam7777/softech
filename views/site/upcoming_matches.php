@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <br/>
-            <h5>Subscriptions</h5>
+            <h5>Upcoming Fixtures</h5>
             <br/>
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -27,53 +27,55 @@
                                 foreach ($data as $value) {
                                     //dd($value);
                                     if (!empty($value)) {
-                                        if (!Yii::$app->user->isGuest) {
-                                            $is_subscribed = \app\models\UserSubscriptions::findOne([
-                                                'user_id' => $value->user_id,
-                                                'link' => $value->link,
-                                            ]);
-                                        }
+                                        $name = $value[2] . ' vs ' . $value[3] . ' in ' . $value[4];
                                         ?>
                                         <tr>
+                                            <td style="width: 50%">
+                                                <h4 class="title">
+                                                    <?= $name; ?>
+                                                </h4>
+                                            </td>
                                             <td>
-                                                <button type="button" class="btn-warning pull-right"
+                                                <h5>
+                                                   <?= $value[0]; ?>
+                                                </h5>
+                                            </td>
+                                            <td>
+                                                <h5>
+                                                    <?= $value[1]; ?>
+                                                </h5>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-danger pull-right"
                                                         data-toggle="modal"
-                                                        data-target="#myModal1<?=$i?>">
-                                                    <i class="fa fa-image"></i>
+                                                        data-target="#myModal1<?= $i ?>">
+                                                    <i class="fa fa-info"></i>
                                                 </button>
                                                 <!-- Modal -->
-                                                <div id="myModal1<?=$i?>" class="modal fade" role="dialog">
+                                                <div id="myModal1<?= $i ?>" class="modal fade" role="dialog">
                                                     <div class="modal-dialog">
                                                         <!-- Modal content-->
                                                         <div class="modal-content">
                                                             <div class="modal-body">
                                                                 <center>
-                                                                    <img src="<?= $value->image_url ?>">
+                                                                    <img src="<?= Yii::$app->homeUrl ?>/assets_theme/img/Fixtures.jpg">
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h5><?= $name ?></h5>
+                                                                    <br/>
+                                                                    on
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h5><?= $value[0] ?></h5>
+                                                                    <br/>
+                                                                    at
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <h5><?= $value[1] ?></h5>
                                                                 </center>
                                                             </div>
                                                         </div>
 
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td style="width: 100%">
-                                                <h4 class="title">
-                                                    <a href="<?= \yii\helpers\Url::to(['site/detail-search', 'label' => $is_subscribed->label, 'link' => $is_subscribed->link]) ?>"><?= $value->name ?></a>
-                                                </h4>
-                                            </td>
-                                            <td>
-                                                <div class="">
-                                                    <div class="">
-                                                        <?php
-                                                        if (!empty($is_subscribed) && !Yii::$app->user->isGuest/*&& $_GET['type'] == "Cricket"*/) {
-                                                            ?>
-                                                            <a href="<?= \yii\helpers\Url::to(['subscription/delete', 'id' => $is_subscribed->id]) ?>"
-                                                               class="btn btn-danger pull-right">
-                                                                Unsubscribe
-                                                            </a>
-                                                            <?php
-                                                        }
-                                                        ?>
                                                     </div>
                                                 </div>
                                             </td>
