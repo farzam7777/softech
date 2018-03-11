@@ -62,9 +62,11 @@ class SubscriptionController extends Controller
             $model->label = $_POST['label'];
             $model->image_url = $_POST['image_url'];
             $model->alert_time = $_POST['alert_time'];
+            $label = $model->label;
+            $link = $model->link;
             if ($model->save()) {
                 $data = array();
-                $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/loaad.py $label $link");
+                $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/load_events.py Football $label $link");
                     if(empty($result)){
                     $path = Yii::$app->getBasePath() . "/Load.csv";
                     $file = fopen($path, "r");

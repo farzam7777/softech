@@ -66,7 +66,7 @@
                                                 } else {
                                                     ?>
                                                     <h4 class="title">
-                                                        <a href="#"><?= $value->name ?></a>
+                                                        <a href="#"><?= $value[0] ?></a>
                                                     </h4>
                                                     <?php
                                                 }?>

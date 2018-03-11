@@ -156,7 +156,7 @@ class SiteController extends Controller
         $user = User::findOne(Yii::$app->user->id);
         $data = array();
         if(!empty($label) && !empty($link)){
-            $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/loaad.py $label $link");
+            $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/load_events.py Football $label $link");
             if(empty($result)){
                 $path = Yii::$app->getBasePath() . "/Load.csv";
                 $file = fopen($path, "r");
