@@ -149,4 +149,25 @@ class SiteController extends Controller
         }
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionDetailSearch($label = null, $link = null)
+    {
+        $this->layout = "theme_layout";
+        $user = User::findOne(Yii::$app->user->id);
+        $data = array();
+        if(!empty($label) && !empty($link)){
+            $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/loaad.py $label $link");
+            if(empty($result)){
+                $path = Yii::$app->getBasePath() . "/Load.csv";
+                $file = fopen($path, "r");
+                while (!feof($file)) {
+                    $data[] = fgetcsv($file);
+                }
+                fclose($file);
+                unset($data[0]);
+            }
+            return $this->render('upcoming_matches', ['data' => $data, 'user' => $user]);
+        }
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 }

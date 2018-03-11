@@ -22,6 +22,7 @@
                         <table class="table table-filter">
                             <tbody>
                             <?php
+                            $i = 0;
                             if (!empty($data)) {
                                 foreach ($data as $value) {
                                     //dd($value);
@@ -37,17 +38,17 @@
                                             <td>
                                                 <button type="button" class="btn-warning pull-right"
                                                         data-toggle="modal"
-                                                        data-target="#myModal1">
+                                                        data-target="#myModal1<?=$i?>">
                                                     <i class="fa fa-image"></i>
                                                 </button>
                                                 <!-- Modal -->
-                                                <div id="myModal1" class="modal fade" role="dialog">
+                                                <div id="myModal1<?=$i?>" class="modal fade" role="dialog">
                                                     <div class="modal-dialog">
                                                         <!-- Modal content-->
                                                         <div class="modal-content">
                                                             <div class="modal-body">
                                                                 <center>
-                                                                    <img src="<?= substr($value['2'], 0, -5) ?>">
+                                                                    <img src="<?= $value[2] ?>">
                                                                 </center>
                                                             </div>
                                                         </div>
@@ -56,9 +57,19 @@
                                                 </div>
                                             </td>
                                             <td style="width: 100%">
-                                                <h4 class="title">
-                                                    <a href="#" onclick="return false;"><?= $value[0] ?></a>
-                                                </h4>
+                                                <?php if ($_GET['type'] == "Football") {
+                                                    ?>
+                                                    <h4 class="title">
+                                                        <a href="<?= \yii\helpers\Url::to(['site/detail-search', 'label' => $value[3], 'link' => $value[1]]) ?>"><?= $value[0] ?></a>
+                                                    </h4>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <h4 class="title">
+                                                        <a href="#"><?= $value->name ?></a>
+                                                    </h4>
+                                                    <?php
+                                                }?>
                                             </td>
                                             <td>
                                                 <div class="">
@@ -68,11 +79,11 @@
                                                         ?>
                                                         <button type="button" class="btn-success pull-right"
                                                                 data-toggle="modal"
-                                                                data-target="#myModal">
+                                                                data-target="#myModal<?=$i?>">
                                                             <i class="fa fa-star"></i>
                                                         </button>
                                                     <!-- Modal -->
-                                                        <div id="myModal" class="modal fade" role="dialog">
+                                                        <div id="myModal<?=$i?>" class="modal fade" role="dialog">
                                                             <div class="modal-dialog">
 
                                                                 <!-- Modal content-->
@@ -95,6 +106,8 @@
                                                                                        value="<?= $value[1] ?>">
                                                                                 <input type="hidden" name="name"
                                                                                        value="<?= $value[0] ?>">
+                                                                                <input type="hidden" name="label"
+                                                                                       value="<?= $value[3] ?>">
                                                                                 <input type="hidden" name="image_url"
                                                                                        value="<?= substr($value['2'], 0, -5) ?>">
                                                                                 <input type="hidden" name="query"
@@ -144,6 +157,7 @@
                                         </tr>
                                         <?php
                                     }
+                                    $i++;
                                 }
                             } else {
                                 ?>
