@@ -68,7 +68,7 @@
                                                             ?>
                                                             <a href="<?= \yii\helpers\Url::to(['subscription/delete', 'id' => $is_subscribed->id]) ?>"
                                                                class="btn btn-danger pull-right">
-                                                                <i class="fa fa-star"></i>
+                                                                Unsubscribe
                                                             </a>
                                                             <?php
                                                         }
