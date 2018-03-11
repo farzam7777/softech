@@ -93,6 +93,10 @@
                                                                                        value="<?= Yii::$app->request->getCsrfToken() ?>"/>
                                                                                 <input type="hidden" name="link"
                                                                                        value="<?= $value[1] ?>">
+                                                                                <input type="hidden" name="name"
+                                                                                       value="<?= $value[0] ?>">
+                                                                                <input type="hidden" name="image_url"
+                                                                                       value="<?= substr($value['2'], 0, -5) ?>">
                                                                                 <input type="hidden" name="query"
                                                                                        value="<?= $_GET['query'] ?>">
                                                                                 <input type="hidden" name="type"

@@ -42,7 +42,10 @@ class SubscriptionController extends Controller
         $this->layout = "theme_layout";
         $this->layout = "theme_layout";
         $user = User::findOne(Yii::$app->user->id);
-        $data = $user->subscriptions;
+        $data[] = array();
+        if(!empty($user->subscriptions)){
+            $data = $user->subscriptions;
+        }
         return $this->render('/user/subscriptions', ['data' => $data, 'user' => $user]);
         throw new NotFoundHttpException('The requested page does not exist.');
     }
@@ -55,6 +58,8 @@ class SubscriptionController extends Controller
             $query = $_POST['query'];
             $type = $_POST['type'];
             $model->link = $_POST['link'];
+            $model->name = $_POST['name'];
+            $model->image_url = $_POST['image_url'];
             $model->user_id = Yii::$app->user->identity->id;
             $model->alert_time = $_POST['alert_time'];
             if ($model->save()) {
@@ -69,9 +74,11 @@ class SubscriptionController extends Controller
         $model = $this->findModel($id);
         $model->delete();
         $user = User::findOne(Yii::$app->user->id);
-        $data = $user->subscriptions;
+        $data[] = array();
+        if(!empty($user->subscriptions)){
+            $data = $user->subscriptions;
+        }
         return $this->render('/user/subscriptions', ['data' => $data, 'user' => $user]);
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     protected function findModel($id)

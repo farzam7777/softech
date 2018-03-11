@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <br/>
-            <h5>Search Results</h5>
+            <h5>Subscriptions</h5>
             <br/>
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -28,8 +28,8 @@
                                     if (!empty($value)) {
                                         if (!Yii::$app->user->isGuest) {
                                             $is_subscribed = \app\models\UserSubscriptions::findOne([
-                                                'user_id' => $user->id,
-                                                'link' => $value[1],
+                                                'user_id' => $value->user_id,
+                                                'link' => $value->link,
                                             ]);
                                         }
                                         ?>
@@ -47,7 +47,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-body">
                                                                 <center>
-                                                                    <img src="<?= substr($value['2'], 0, -5) ?>">
+                                                                    <img src="<?= substr($value->image_url, 0, -5) ?>">
                                                                 </center>
                                                             </div>
                                                         </div>
@@ -57,7 +57,7 @@
                                             </td>
                                             <td style="width: 100%">
                                                 <h4 class="title">
-                                                    <a href="#" onclick="return false;"><?= $value[0] ?></a>
+                                                    <a href="#" onclick="return false;"><?= $value->name ?></a>
                                                 </h4>
                                             </td>
                                             <td>
