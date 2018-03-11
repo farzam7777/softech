@@ -75,6 +75,7 @@ use yii\helpers\Url;
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
+                <li><a href="<?= Url::to(['site/index'])?>">Home</a></li>
                 <?php
                 if (Yii::$app->controller->id == "site" && Yii::$app->controller->action->id == "index") {
                     ?>

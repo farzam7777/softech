@@ -135,8 +135,8 @@ class SiteController extends Controller
         $user = User::findOne(Yii::$app->user->id);
         $data = array();
         if(!empty($query) && !empty($type)){
-            $result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
-            if(empty($result)){
+            /*$result = shell_exec("python3 /home/farzam/PycharmProjects/DataScience/Assignment2/search.py $type $query");
+            if(empty($result)){*/
                 $path = Yii::$app->getBasePath() . "/Search.csv";
                 $file = fopen($path, "r");
                 while (!feof($file)) {
@@ -144,7 +144,7 @@ class SiteController extends Controller
                 }
                 fclose($file);
                 unset($data[0]);
-            }
+            /*}*/
             return $this->render('search_results', ['data' => $data, 'user' => $user]);
         }
         throw new NotFoundHttpException('The requested page does not exist.');
