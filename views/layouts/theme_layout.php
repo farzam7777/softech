@@ -85,10 +85,10 @@ use yii\helpers\Url;
                     <li><a href="#contact">Contact Us</a></li>
                     <?php
                 } ?>
+                <li><a href="<?= Url::to(['/subscription/index'])?>">Subscriptions</a></li>
                 <?php
                 if (Yii::$app->controller->action->id != "search") {
                     ?>
-                    <li><a href="<?= Url::to(['/subscription/index'])?>">Subscriptions</a></li>
                     <?php if (Yii::$app->user->isGuest) { ?>
                         <li><a href="<?= Url::to(['/user/login'])?>">Login</a></li>
                         <li><a href="<?= Url::to(['/user/register'])?>">Sign Up</a></li>
